@@ -1,0 +1,27 @@
+{
+    "name": "slicer-docs",
+    "type": "module",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "format": "prettier . --write"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.3",
+        "@astrojs/starlight": "^0.26.1",
+        "@fontsource/geist-mono": "^5.0.3",
+        "@fontsource/geist-sans": "^5.0.3",
+        "astro": "^4.10.2",
+        "sharp": "^0.32.5",
+        "typescript": "^5.5.4"
+    },
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "prettier-plugin-astro": "^0.14.1"
+    },
+    "packageManager": "pnpm@9.7.1+sha512.faf344af2d6ca65c4c5c8c2224ea77a81a5e8859cbc4e06b1511ddce2f0151512431dd19e6aff31f2c6a8f5f2aced9bd2273e1fed7dd4de1868984059d2c4247"
+}
