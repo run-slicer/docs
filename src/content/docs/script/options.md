@@ -3,13 +3,39 @@ title: Options
 description: Overview of the options API.
 ---
 
-Scripts are supposed to be pretty simple, but sometimes you want the user to configure them, for example to turn on/off specific abilities of the script instead of just enabling/disabling it entirely. You can do this using the options API, which allows you to add arbitrary entries into the script menu.
+Scripts are supposed to be pretty simple, but sometimes you want the user to configure them, for example to turn on/off specific abilities of the script instead of just enabling/disabling it entirely.
+
+You can do this using the options API, which allows you to add arbitrary entries into the script menu.
 
 :::note
 
 The options API goes hand in hand with [the event bus API](./event.md), so make sure to give that a read before attempting options.
 
 :::
+
+Each option has common properties, like a `type`, `id` and an optional `label`, which defaults to the ID.
+
+```js
+const option /*: Option */ = {
+    type: "...", // one of "button", "checkbox", "radio" or "group"; check the OptionType type
+    id: "my-script-option",
+    label: "My amazing option", // optional
+    // type-specific properties, ...
+};
+
+export default {
+    // ...
+    options: [option],
+    load(context /*: ScriptContext */) {
+        // this is where the event bus comes in
+        context.addEventListener("option_change", (e /*: OptionChangeEvent */) => {
+            console.log("An option has been changed: ", e.option.id);
+            console.log("Is it our option?", e.option === option);
+        });
+    },
+    unload() {},
+};
+```
 
 ## Buttons
 
@@ -19,19 +45,76 @@ The most ubiquitous of them all, the button. It does exactly what one would expe
 const button /*: ButtonOption */ = {
     type: "button",
     id: "my-script-button",
-    label: "My amazing button", // optional, defaults to the id
+    label: "My amazing button",
 };
 
-export default {
-    // ...
-    options: [button],
-    load(context /*: ScriptContext */) {
-        // this is where the event bus comes in
-        context.addEventListener("option_change", (e /*: OptionChangeEvent */) => {
-            console.log("An option has been changed: ", e.option.id);
-            console.log("Is it our button?", e.option === button);
-        });
-    },
-    unload() {},
+// ...
+```
+
+## Checkboxes
+
+An obvious solution for boolean configuration options, a checkbox!
+
+```js
+const checkbox /*: CheckboxOption */ = {
+    type: "checkbox",
+    id: "my-script-checkbox",
+    label: "My amazing checkbox",
+    checked: false, // not checked by default
 };
+
+// ...
+```
+
+## Radio buttons
+
+For whenever you need to represent an enum-like value, there's always a radio button:
+
+```js
+const radio /*: RadioOption */ = {
+    type: "radio",
+    id: "my-script-radio",
+    label: "My amazing radio button",
+    items: [
+        {
+            id: "apple",
+            label: "Apples", // optional, defaults to the ID
+        },
+        {
+            id: "orange",
+            label: "Oranges",
+        },
+    ],
+    selected: "apple", // a selected item ID, apples are default!!
+};
+
+// ...
+```
+
+## Groups
+
+Last but not least, there's the group option for cases where you need to group related options together into one slick menu.
+
+```js
+const group /*: GroupOption */ = {
+    type: "group",
+    id: "my-script-group",
+    label: "My amazing group",
+    options: [
+        // options declared like normal
+        {
+            type: "button",
+            id: "my-script-button",
+            label: "My amazing button",
+        },
+        {
+            type: "checkbox",
+            id: "my-script-checkbox",
+            label: "My amazing checkbox",
+            checked: false,
+        },
+    ],
+};
+
+// ...
 ```
