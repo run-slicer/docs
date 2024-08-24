@@ -7,9 +7,9 @@ Disassembly is a reconstruction of a Java class file into a human-readable repre
 
 The currently supported disassemblers/decompilers are:
 
- - JASM (disassembler, https://github.com/jumanji144/Jasm)
- - CFR (decompiler, https://github.com/leibnitz27/cfr)
- - Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
+-   JASM (disassembler, https://github.com/jumanji144/Jasm)
+-   CFR (decompiler, https://github.com/leibnitz27/cfr)
+-   Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
 
 :::note
 

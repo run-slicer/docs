@@ -17,8 +17,8 @@ Every node that does not naturally (without a jump) pass off execution to anothe
 
 An edge is a line that connects the execution of two blocks in a specific direction. An edge can represent:
 
- - a conditional/unconditional jump (a full line)
- - a natural flow of execution between two consecutive nodes (a dashed line)
+-   a conditional/unconditional jump (a full line)
+-   a natural flow of execution between two consecutive nodes (a dashed line)
 
 Edges may also have hint labels, like `true`/`false` ("branch if comparison succeeds" instruction) or `default` (switch instruction default branch).
 
