@@ -20,6 +20,12 @@ Edges may also have hint labels, like `true`/`false` ("branch if comparison succ
 
 A node typically has 1 (unconditional jump), 2 (conditional jump) or more (switch conditional jump) edges, but it can also have no edges, which means it's dead code - it will _never_ be executed.
 
+:::note
+
+Currently, exception handlers are not visualized, so you may see seemingly dead code, but it may also be a part of an exception handler.
+
+:::
+
 Every node must end with a branch (if, goto, switch or subroutine jump) or terminal instruction (return, throw or subroutine return), otherwise it does not pass [class file verification](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html#jvms-4.10.2.2) (execution fell off at end of code).
 
 ![](/assets/flow_graph.png)
