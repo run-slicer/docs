@@ -9,7 +9,7 @@ You can do this using the options API, which allows you to add arbitrary entries
 
 :::note
 
-The options API goes hand in hand with [the event bus API](./event.md), so make sure to give that a read before attempting options.
+The options API goes hand in hand with [the event bus API](/script/event), so make sure to give that a read before attempting options.
 
 :::
 
