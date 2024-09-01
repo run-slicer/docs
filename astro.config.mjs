@@ -7,7 +7,8 @@ export default defineConfig({
     integrations: [
         starlight({
             title: "slicer docs",
-            description: "The official documentation site for slicer, a modern Java reverse engineering tool for the web.",
+            description:
+                "The official documentation site for slicer, a modern Java reverse engineering tool for the web.",
             social: {
                 github: "https://github.com/run-slicer",
             },
