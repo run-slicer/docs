@@ -28,6 +28,12 @@ export default defineConfig({
                         directory: "script",
                     },
                 },
+                {
+                    label: "Resources",
+                    autogenerate: {
+                        directory: "resources",
+                    },
+                },
             ],
             customCss: ["@fontsource/geist-sans", "@fontsource/geist-mono", "./src/styles/custom.css"],
         }),
