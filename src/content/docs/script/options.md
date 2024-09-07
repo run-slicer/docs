@@ -55,6 +55,8 @@ const button /*: ButtonOption */ = {
 
 An obvious solution for boolean configuration options, a checkbox!
 
+_Checkbox checked state is not persisted by slicer and **will be RESET** on refresh._
+
 ```js
 const checkbox /*: CheckboxOption */ = {
     type: "checkbox",
@@ -68,7 +70,9 @@ const checkbox /*: CheckboxOption */ = {
 
 ## Radio buttons
 
-For whenever you need to represent an enum-like value, there's always a radio button:
+For whenever you need to represent an enum-like value, there's always a radio button.
+
+_Radio button selection is not persisted by slicer and **will be RESET** on refresh._
 
 ```js
 const radio /*: RadioOption */ = {

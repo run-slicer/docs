@@ -47,3 +47,11 @@ export default {
     },
 };
 ```
+
+:::danger
+
+Disassemblers are run on the main thread; it is **the script's responsibility** to make sure the process doesn't have a measurable impact on the responsiveness of the UI.
+
+If it does, it is recommended to off-load blocking calls to a [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+
+:::
