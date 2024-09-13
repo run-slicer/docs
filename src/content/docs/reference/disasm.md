@@ -11,6 +11,8 @@ The currently supported disassemblers/decompilers are:
 -   CFR (decompiler, https://github.com/leibnitz27/cfr)
 -   Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
 
+Custom ones can be added through the [Disassembler API](/script/disasm) (popular ones are [here](/resources/scripts#disassembly)).
+
 :::note
 
 Compilation of Java source code into bytecode is a lossy process, therefore decompiled output is only a best-effort approximation by the decompiler and may not always be valid Java code.
