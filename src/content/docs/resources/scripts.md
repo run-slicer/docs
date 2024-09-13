@@ -7,7 +7,7 @@ If you have any cool scripts and want to share them, [make a PR](https://github.
 
 ## Disassembly
 
--   [run-slicer/script-krak](https://github.com/run-slicer/script-krak/releases) - A script binding for the Krakatau (v1) Java decompiler; GPL.
+-   [run-slicer/script-krak](https://github.com/run-slicer/script-krak/releases) - A script binding for the Krakatau (v1) Java decompiler and disassembler; GPL.
 
 ## Deobfuscation
 
