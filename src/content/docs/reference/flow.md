@@ -11,7 +11,7 @@ This view can be opened in the context menu of a project entry (`Open as` -> `Fl
 
 A flow graph is composed of two parts: nodes and edges.
 
-A node is a block of instructions, which are executed sequentially. The node containing the zero-offset (first) instruction is called the entrypoint node and is highlighted with a special border (white/black).
+A node is a block of instructions, which are executed sequentially. The node containing the zero-offset (first) instruction is called the entrypoint node and is highlighted with a special border (primary color of the UI - white, black, ...).
 
 Every node that does not naturally (without a jump) pass off execution to another node must end with a branch (if, goto, switch or subroutine jump) or terminal instruction (return, throw or subroutine return), otherwise it does not pass [class file verification](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html#jvms-4.10.2.2) (execution fell off at end of code).
 

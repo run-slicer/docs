@@ -25,11 +25,11 @@ Each tab has an associated unique ID, a non-unique label and optionally a worksp
 // pretty representation of a Tab object
 // "unspecific" types are values reserved for use with functionality that does not have an API variant yet
 {
-    type: "code", // one of "unspecific", "welcome", "code", "hex" or "flow_graph"; see the TabType type
+    type: "code", // one of "unspecific", "welcome", "code", "hex", "flow_graph" or "image"; see the TabType type
     id: "code:sample/math/BinarySearch.class", // the ID of the tab; DO NOT parse this, the structure is an implementation detail!
     label: "BinarySearch.class", // the tab label, as seen by the user
     entry: { // the workspace entry, can be null
-        type: "class", // one of "unspecific" or "class"; see the EntryType type
+        type: "class", // one of "unspecific", "class" or "archive"; see the EntryType type
         name: "sample/math/BinarySearch.class", // the entry name, this is the workspace path
     },
 }
