@@ -11,6 +11,7 @@ The currently supported disassemblers/decompilers are:
 -   CFR (decompiler, https://github.com/leibnitz27/cfr)
 -   Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
 -   Procyon (decompiler, https://github.com/mstrobel/procyon)
+-   slicer (pseudocode disassembler, https://github.com/run-slicer/asm)
 
 Custom ones can be added through the [Disassembler API](/script/disasm) (popular ones are [here](/resources/scripts#disassembly)).
 
