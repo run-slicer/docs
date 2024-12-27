@@ -16,13 +16,16 @@ context.disasm.add({ ... }); // adds a custom disassembler
 context.disasm.remove("vf"); // removes a disassembler by its ID
 ```
 
-Every disassembler needs an ID and a `run` function that disassembles a class file byte array into a string representation. Optionally, a human-readable label can also be supplied.
+Every disassembler needs an ID and a `class` function that disassembles a class file byte array into a string representation.
+Optionally, a `method` function for disassembling a single method and human-readable label can also be supplied.
+
+A disassembler can request class files from the workspace based on their internal names using the supplied `source` function.
 
 :::tip
 
 If your disassembler outputs Java source code, add a `language: "java"` property to enable Java syntax highlighting!
 
-_The possible values of the property are an implementation detail and subject to change._
+_This property directly maps to slicer's internal language ID representation, possible values can be found [here](https://github.com/run-slicer/slicer/blob/main/src/lib/lang/index.ts#L3)._
 
 :::
 
@@ -32,7 +35,24 @@ const myDisasm /*: Disassembler */ = {
     label: "My disassembler", // optional
     language: "java", // optional
 
-    run(data /*: Uint8Array */) /*: string | Promise<string> */ {
+    async class(
+        name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
+        source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+    ) /*: string | Promise<string> */ {
+        const data /*: Uint8Array | null */ = await source(name);
+        if (!data) return ""; // this should never happen
+
+        // disassembler logic goes here
+    },
+    // optional
+    async method(
+        name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
+        signature /*: string */, // a method name and descriptor joined together, i.e. main([Ljava/lang/String;)V
+        source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+    ) /*: string | Promise<string> */ {
+        const data /*: Uint8Array | null */ = await source(name);
+        if (!data) return ""; // this should never happen
+
         // disassembler logic goes here
     },
 };
