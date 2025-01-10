@@ -7,11 +7,11 @@ Disassembly is a reconstruction of a Java class file into a human-readable repre
 
 The currently supported disassemblers/decompilers are:
 
--   JASM (disassembler, https://github.com/jumanji144/Jasm)
--   CFR (decompiler, https://github.com/leibnitz27/cfr)
--   Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
--   Procyon (decompiler, https://github.com/mstrobel/procyon)
--   slicer (pseudocode disassembler, https://github.com/run-slicer/asm)
+- JASM (disassembler, https://github.com/jumanji144/Jasm)
+- CFR (decompiler, https://github.com/leibnitz27/cfr)
+- Vineflower (default; decompiler, https://github.com/Vineflower/vineflower)
+- Procyon (decompiler, https://github.com/mstrobel/procyon)
+- slicer (pseudocode disassembler, https://github.com/run-slicer/asm)
 
 Custom ones can be added through the [Disassembler API](/script/disasm) (popular ones are [here](/resources/scripts#disassembly)).
 

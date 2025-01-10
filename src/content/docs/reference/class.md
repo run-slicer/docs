@@ -9,12 +9,12 @@ slicer provides a tabular view of a class file's properties and members, useful 
 
 The Overview tab lists basic properties, such as:
 
--   the magic header (should always be `0xcafebabe`)
--   minor & major version (+ a corresponding Java language version)
--   the class name & modifiers
--   the super types (superclass and implemented interfaces)
--   generic signature, if present
--   source file attribute, if present
+- the magic header (should always be `0xcafebabe`)
+- minor & major version (+ a corresponding Java language version)
+- the class name & modifiers
+- the super types (superclass and implemented interfaces)
+- generic signature, if present
+- source file attribute, if present
 
 ![](/assets/class/overview.png)
 
