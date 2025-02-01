@@ -12,10 +12,10 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.9.4",
-        "@astrojs/starlight": "^0.30.5",
+        "@astrojs/starlight": "^0.31.1",
         "@fontsource/geist-mono": "^5.1.1",
         "@fontsource/geist-sans": "^5.1.0",
-        "astro": "^5.1.5",
+        "astro": "^5.2.3",
         "sharp": "^0.33.5",
         "starlight-heading-badges": "^0.4.0",
         "typescript": "^5.7.3"
