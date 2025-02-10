@@ -21,7 +21,7 @@ An edge is a line that connects the execution of two blocks in a specific direct
 - a natural flow of execution between two consecutive nodes (a dashed line)
 - a connection to an exception handler (a full red line)
 
-Edges may also have hint labels, like `true`/`false` ("branch if comparison succeeds" instructions) or `default` (switch instruction default branch).
+Edges may also have hint labels, like `true`/`false` ("branch if comparison succeeds" instructions), `default` (switch instruction default branch) or an integer value (switch instruction branch case).
 
 A node typically has 1 (unconditional jump), 2 (conditional jump) or more (switch conditional jump) edges, but it can also have no edges, which means it's dead code - it will _never_ be executed.
 
