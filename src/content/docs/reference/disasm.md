@@ -37,7 +37,7 @@ The disassembler produces pseudocode similar to Java, which allows you to view t
 
 It does not resugar many code constructs, such as if statements and variable declarations, so knowledge of the JVM instruction set is highly necessary.
 
-```java
+```java frame="none"
 // Source file: StringsDuplicates.java
 package sample.string;
 
@@ -73,4 +73,53 @@ public super class StringsDuplicates extends java.lang.Object {
         // 7: return
     }
 }
+```
+
+#### Header
+
+Dissecting the class header, we can make out that we're looking at a regular class named `StringsDuplicates` with the modifiers `ACC_PUBLIC` and `ACC_SUPER`, and a super class of `java.lang.Object`.
+
+Furthermore, it's located in the `sample.string` package and was compiled from a `StringsDuplicates.java` source file.
+
+```java frame="none" "StringsDuplicates.java" "sample.string" "public super" "StringsDuplicates" "java.lang.Object"
+// Source file: StringsDuplicates.java
+package sample.string;
+
+public super class StringsDuplicates extends java.lang.Object {
+    // ...
+}
+```
+
+#### Members
+
+Our class contains a couple of methods and one self-explanatory field, with one method resugared to its original constructor syntax.
+
+Code inside the methods is represented via string representations of individual instructions and their offsets.
+
+Instructions may also be encased in a try-catch statement with a virtual goto in the handler, signifying an entry in the exception handler table.
+
+```java "java.lang.String F" "StringsDuplicates()" "4:" "23:" "return"
+// ...
+private static final java.lang.String F;
+
+public StringsDuplicates() {
+    // 0: aload this Lsample/string/StringsDuplicates;
+    // 1: invokespecial java/lang/Object <init> ()V
+    // 4: return
+}
+public static void main(java.lang.String[] args) {
+    //  0: ldc "Hello this is a duplicate string"
+    //  2: astore_1
+    //  3: ldc "Hello this is a duplicate string"
+    //  5: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
+    //  8: aload s Ljava/lang/String;
+    //  9: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
+    // 12: invokestatic sample/string/StringsDuplicates duplicate ()Ljava/lang/String;
+    // 15: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
+    // 18: ldc "Hello this is a duplicate string"
+    // 20: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
+    // 23: return
+}
+
+// ...
 ```
