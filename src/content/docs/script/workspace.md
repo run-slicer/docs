@@ -29,10 +29,3 @@ Each entry has an associated unique name, an internal type and data reading func
     blob: async function () { /* ... */ }, // gets the entry data as a Blob
 }
 ```
-
-:::caution
-
-Entry types can change over time as [analysis](/reference/analysis) happens, these changes will not be visible in the script's entry view -
-the views need to be requested again via `WorkspaceContext#entries` or `WorkspaceContext#find`.
-
-:::

@@ -34,6 +34,7 @@ const myDisasm /*: Disassembler */ = {
     id: "my-disasm",
     label: "My disassembler", // optional
     language: "java", // optional
+    options: {}, // a string-to-string mapping of applied disassembler options, modified by slicer and scripts, optional
 
     async class(
         name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
@@ -42,6 +43,7 @@ const myDisasm /*: Disassembler */ = {
         const data /*: Uint8Array | null */ = await source(name);
         if (!data) return ""; // this should never happen
 
+        const myOption = this.options?.["my-option"];
         // disassembler logic goes here
     },
     // optional
@@ -53,6 +55,7 @@ const myDisasm /*: Disassembler */ = {
         const data /*: Uint8Array | null */ = await source(name);
         if (!data) return ""; // this should never happen
 
+        const myOption = this.options?.["my-option"];
         // disassembler logic goes here
     },
 };
