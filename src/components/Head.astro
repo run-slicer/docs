@@ -1,0 +1,45 @@
+---
+import config from "virtual:starlight/user-config";
+
+const { entry, lang, siteTitle } = Astro.locals.starlightRoute;
+const { data } = entry;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonicalImage = new URL("/favicon-192x192.png", Astro.site);
+const description = data.description || config.description;
+
+const base = stripTrailingSlash(import.meta.env.BASE_URL);
+
+function stripTrailingSlash(href: string) {
+    if (href[href.length - 1] === "/") {
+        href = href.slice(0, -1);
+    }
+    return href;
+}
+function stripLeadingSlash(href: string) {
+    if (href[0] === "/") {
+        href = href.slice(1);
+    }
+    return href;
+}
+function fileWithBase(path: string) {
+    path = stripLeadingSlash(path);
+    return path ? base + "/" + path : base;
+}
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{data.title} {config.titleDelimiter} {siteTitle}</title>
+<link rel="canonical" href={canonical.href} />
+<meta property="generator" content={Astro.generator} />
+<link rel="shortcut icon" href={fileWithBase(config.favicon.href)} type={config.favicon.type} />
+<meta property="og:title" content={`${data.title} ${config.titleDelimiter} ${siteTitle}`} />
+<meta property="og:type" content="article" />
+<meta property="og:url" content={canonical.href} />
+<meta property="og:locale" content={lang} />
+<meta property="og:description" content={description} />
+<meta property="description" content={description} />
+<link rel="sitemap" href={fileWithBase("/sitemap-index.xml")} />
+<meta property="og:image" content={canonicalImage.href} />
+<meta name="twitter:image" content={canonicalImage.href} />
