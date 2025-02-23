@@ -33,6 +33,7 @@ _This property directly maps to slicer's internal language ID representation, po
 const myDisasm /*: Disassembler */ = {
     id: "my-disasm",
     label: "My disassembler", // optional
+    version: "1.0.0", // optional
     language: "java", // optional
     options: {}, // a string-to-string mapping of applied disassembler options, modified by slicer and scripts, optional
 
