@@ -53,7 +53,7 @@ Regular expressions are a powerful way to search almost anything in the class fi
 
 ### Constant pool
 
-Searching in the constant pool is done by checking for matches against [disassembled representations](/reference/disasm#constant_pool) of the underlying entries.
+Searching in the constant pool is done by checking for matches against [disassembled representations](/reference/disasm#constant-pool) of the underlying entries.
 
 Commonly searched aspects and queries may look like this:
 

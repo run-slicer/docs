@@ -68,7 +68,7 @@ public super class StringsDuplicates extends java.lang.Object {
     }
     public static void main(java.lang.String[] args) {
         //  0: ldc "Hello this is a duplicate string"
-        //  2: astore_1
+        //  2: astore s Ljava/lang/String;
         //  3: ldc "Hello this is a duplicate string"
         //  5: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
         //  8: aload s Ljava/lang/String;
@@ -126,7 +126,7 @@ public StringsDuplicates() {
 }
 public static void main(java.lang.String[] args) {
     //  0: ldc "Hello this is a duplicate string"
-    //  2: astore_1
+    //  2: astore s Ljava/lang/String;
     //  3: ldc "Hello this is a duplicate string"
     //  5: invokestatic sample/string/StringsDuplicates p (Ljava/lang/String;)V
     //  8: aload s Ljava/lang/String;
