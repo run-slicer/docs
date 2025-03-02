@@ -29,7 +29,24 @@ slicer includes a basic disassembler to power several bytecode analysis features
 
 - the [class view](/reference/class) (prettifying class file constructs)
 - the [flow graph](/reference/flow) (prettifying instructions and computing the graph itself)
+- the [search](/reference/analysis#search) (prettifying constant pool entries)
 - the pseudocode disassembler
+
+### Constant pool
+
+Constant pool entries are represented in a format consisting of the entry type identifier and the stringified value of the entry.
+
+- `UTF8 <value>` - any string-like value defined in the class file (names, descriptors, strings, ...)
+- `INTEGER/FLOAT/LONG/DOUBLE <value>` - primitives defined in the class file
+- `CLASS <class name in internal format, UTF8 value>` - class reference
+- `STRING "<UTF8 value>"` - string literal defined in the class file
+- `METHOD_TYPE <method descriptor, UTF8 value>` - method descriptor reference
+- `MODULE/PACKAGE <module/package name, UTF8 value>` - module-info/package-info name data
+- `FIELDREF/METHODREF/INTERFACE_METHODREF <owner name, CLASS value> <member name and descriptor, NAME_AND_TYPE value>` - class member reference
+- `NAME_AND_TYPE <name, UTF8 value> <descriptor, UTF8 value>` - member name and descriptor reference
+- `DYNAMIC/INVOKE_DYNAMIC <bootstrap method index> <member name and descriptor, NAME_AND_TYPE value>`
+- `METHOD_HANDLE <handle kind> <METHODREF value>`
+    - handle kinds: `GET_FIELD`, `GET_STATIC`, `PUT_FIELD`, `PUT_STATIC`, `INVOKE_VIRTUAL`, `INVOKE_STATIC`, `INVOKE_SPECIAL`, `NEW_INVOKE_SPECIAL`, `INVOKE_INTERFACE`
 
 ### Pseudocode
 

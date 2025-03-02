@@ -31,4 +31,48 @@ There are three search modes, selectable in the dropdown menu:
 - Exact match (case-sensitive)
 - Regular expression (RegEx pattern occurrences)
 
+:::tip
+
+Regular expressions are a powerful way to search almost anything in the class file, so don't hesitate to use them!
+
+| Notation   | Description                           |
+| ---------- | ------------------------------------- |
+| `^`        | Start                                 |
+| `$`        | End                                   |
+| `\d`       | Any digit                             |
+| `.`        | Any character                         |
+| `[abcdef]` | Any character from the set            |
+| `*`        | Match preceding token 0 or more times |
+| `+`        | Match preceding token 1 or more times |
+| `?`        | Match preceding token 1 or 0 times    |
+| `(?i)`     | Case-insensitive flag                 |
+
+:::
+
 ![Search example](/assets/search.png)
+
+### Constant pool
+
+Searching in the constant pool is done by checking for matches against [disassembled representations](/reference/disasm#constant_pool) of the underlying entries.
+
+Commonly searched aspects and queries may look like this:
+
+| Searching?                     | Mode               | Query                               |
+| ------------------------------ | ------------------ | ----------------------------------- |
+| All strings in the class file  | Regular expression | `^STRING`                           |
+| Reference to a specific class  | Exact match/any    | `CLASS package/SearchedClass`       |
+| Reference to a specific field  | Exact match/any    | `NAME_AND_TYPE theField Lthe/Type;` |
+| Reference to a specific method | Exact match/any    | `NAME_AND_TYPE theMethod ()V`       |
+
+### Members
+
+Members are searched by their name and descriptor, delimited by a space: `theField Lthe/Type;` or `theMethod ()V`.
+
+Commonly searched aspects and queries may look like this:
+
+| Searching?                            | Mode               | Query                 |
+| ------------------------------------- | ------------------ | --------------------- |
+| Any field/method with a specific name | Regular expression | `^theField`           |
+| Any method returning a specific type  | Regular expression | `)Lthe/Type;$`        |
+| Specific field                        | Exact match/any    | `theField Lthe/Type;` |
+| Specific method                       | Exact match/any    | `theMethod ()V`       |
