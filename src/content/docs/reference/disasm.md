@@ -59,7 +59,7 @@ It does not resugar many code constructs, such as if statements and variable dec
 package sample.string;
 
 public super class StringsDuplicates extends java.lang.Object {
-    private static final java.lang.String F;
+    private static final java.lang.String F = "Hello this is a duplicate string";
 
     public StringsDuplicates() {
         // 0: aload this Lsample/string/StringsDuplicates;
@@ -110,6 +110,7 @@ public super class StringsDuplicates extends java.lang.Object {
 #### Members
 
 Our class contains a couple of methods and one self-explanatory field, with one method resugared to its original constructor syntax.
+The field has an assigned value, showing a value from its `ConstantValue` attribute.
 
 Code inside the methods is represented via string representations of individual instructions and their offsets.
 
@@ -117,7 +118,7 @@ Instructions may also be encased in a try-catch statement with a virtual goto in
 
 ```java "java.lang.String F" "StringsDuplicates()" "4:" "23:" "return"
 // ...
-private static final java.lang.String F;
+private static final java.lang.String F = "Hello this is a duplicate string";
 
 public StringsDuplicates() {
     // 0: aload this Lsample/string/StringsDuplicates;

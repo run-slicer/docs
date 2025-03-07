@@ -1,10 +1,6 @@
 ---
 title: Analysis
 description: Reference of analysis capabilities.
-sidebar:
-    badge:
-        text: Experimental
-        variant: danger
 ---
 
 To enable features, such as the integrated pseudocode disassembler and the [class view](/reference/class), slicer creates in-memory models of classes.

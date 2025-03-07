@@ -2,6 +2,7 @@
 title: Welcome
 description: The official documentation site for slicer, a modern Java reverse engineering tool for the web.
 template: splash
+editUrl: false
 hero:
     title: slicer
     tagline: A modern Java reverse engineering tool for the web.
@@ -23,6 +24,8 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Features
 
+<br />
+
 <CardGrid stagger>
     <Card title="Disassembly" icon="pencil">
         Disassemble and decompile Java class files.
@@ -30,10 +33,10 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
     <Card title="Control flow visualization" icon="random">
         Visualize bytecode control flow in a simple flow graph.
     </Card>
+    <Card title="Search" icon="magnifier">
+        Traverse bytecode constants, members and much more.
+    </Card>
     <Card title="Scripting API" icon="setting">
         Programmatically manipulate the editor with JavaScript.
-    </Card>
-    <Card title="Read the docs" icon="open-book">
-        Learn more in [the reference](/reference).
     </Card>
 </CardGrid>

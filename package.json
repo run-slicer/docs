@@ -15,14 +15,14 @@
         "@astrojs/starlight": "^0.32.2",
         "@fontsource/geist-mono": "^5.2.5",
         "@fontsource/geist-sans": "^5.2.5",
-        "astro": "^5.4.1",
+        "astro": "^5.4.2",
         "sharp": "^0.33.5",
         "starlight-heading-badges": "^0.5.0",
         "typescript": "^5.8.2"
     },
     "devDependencies": {
-        "prettier": "^3.5.2",
+        "prettier": "^3.5.3",
         "prettier-plugin-astro": "^0.14.1"
     },
-    "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+    "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
 }
