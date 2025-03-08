@@ -25,9 +25,17 @@ export default {
 
 TypeScript type definitions for the API are available [here](https://github.com/run-slicer/script).
 
+Scripts are meant to be fairly simple, but they can also be pretty extensive, so for convenience, a TypeScript+Rollup example project is provided [here](https://github.com/run-slicer/script-template).
+
 :::
 
-Scripts are meant to be fairly simple, but they can also be pretty extensive, so for convenience, a TypeScript+Rollup example project is provided [here](https://github.com/run-slicer/script-template).
+:::tip
+
+Scripts can be shared using a `script` URL parameter, the user will be prompted about importing when slicer loads.
+
+For example, `https://slicer.run?script=https://a-cdn.com/my-slicer-script/index.js` imports a script from `https://a-cdn.com/my-slicer-script/index.js`.
+
+:::
 
 ## Context
 
