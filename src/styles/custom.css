@@ -1,6 +1,6 @@
 :root {
-    --sl-font: "Geist Sans";
-    --sl-font-mono: "Geist Mono";
+    --sl-font: '"Geist Sans"';
+    --sl-font-mono: '"Geist Mono"';
 }
 
 /* Dark mode colors. */

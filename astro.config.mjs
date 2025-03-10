@@ -36,7 +36,13 @@ export default defineConfig({
                     },
                 },
             ],
-            customCss: ["@fontsource/geist-sans", "@fontsource/geist-mono", "./src/styles/custom.css"],
+            customCss: [
+                "@fontsource/geist-sans/400.css",
+                "@fontsource/geist-sans/600.css",
+                "@fontsource/geist-mono/400.css",
+                "@fontsource/geist-mono/600.css",
+                "./src/styles/custom.css",
+            ],
             plugins: [starlightHeadingBadges()],
             components: {
                 Head: "./src/components/Head.astro",
