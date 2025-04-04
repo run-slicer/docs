@@ -72,3 +72,20 @@ Commonly searched aspects and queries may look like this:
 | Any method returning a specific type  | Regular expression | `)Lthe/Type;$`        |
 | Specific field                        | Exact match/any    | `theField Lthe/Type;` |
 | Specific method                       | Exact match/any    | `theMethod ()V`       |
+
+## Transformers
+
+Transformers are a convenient way to _transform_ class files before they're analyzed (just-in-time).
+
+slicer includes several options that may improve the chances of successful disassembly when dealing with obfuscated code.
+
+| Name                         | Group         | Description                                                                                                               |
+| ---------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Verify attributes            | General       | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
+| Strip annotations            | Readability   | Removes annotation-related attributes (`*Annotations`), useful for mitigating "ASM crashers".                             |
+| Strip try-catches            | Readability   | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                          |
+| Strip local variables        | Readability   | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation.          |
+| Strip generic signatures     | Readability   | Removes `Signature` attributes, useful when dealing with name obfuscation.                                                |
+| Strip debug information      | Readability   | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                              |
+| No-op unreachable code       | Normalization | Replaces unreachable code with `nop` instructions.                                                                        |
+| Remove unnecessary modifiers | Normalization | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
