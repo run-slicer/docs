@@ -76,16 +76,34 @@ Commonly searched aspects and queries may look like this:
 ## Transformers
 
 Transformers are a convenient way to _transform_ class files before they're analyzed (just-in-time).
+They can be applied in the `Analysis -> Transformers` menu.
 
 slicer includes several options that may improve the chances of successful disassembly when dealing with obfuscated code.
 
-| Name                         | Group         | Description                                                                                                               |
-| ---------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Verify attributes            | General       | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
-| Strip annotations            | Readability   | Removes annotation-related attributes (`*Annotations`), useful for mitigating "ASM crashers".                             |
-| Strip try-catches            | Readability   | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                          |
-| Strip local variables        | Readability   | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation.          |
-| Strip generic signatures     | Readability   | Removes `Signature` attributes, useful when dealing with name obfuscation.                                                |
-| Strip debug information      | Readability   | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                              |
-| No-op unreachable code       | Normalization | Replaces unreachable code with `nop` instructions.                                                                        |
-| Remove unnecessary modifiers | Normalization | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
+:::note
+
+The scripting API `preload` [event](/script/event) is also implemented as a transformer, and it is run as the _last_ transformer in the pipeline.
+
+:::
+
+### Readability
+
+Readability transformers perform **destructive** transformations, which may help with readability of decompiled output in particular.
+
+| Name                     | Description                                                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Strip annotations        | Removes annotation-related attributes (`*Annotations`), useful for mitigating "ASM crashers".                    |
+| Strip try-catches        | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                 |
+| Strip local variables    | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation. |
+| Strip generic signatures | Removes `Signature` attributes, useful when dealing with name obfuscation.                                       |
+| Strip debug information  | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                     |
+
+### Normalization
+
+Normalization transformers perform functionally equivalent transformations, which mitigate common obfuscation techniques.
+
+| Name                         | Description                                                                                                               |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Verify attributes            | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
+| No-op unreachable code       | Replaces unreachable code with `nop` instructions.                                                                        |
+| Remove unnecessary modifiers | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
