@@ -90,20 +90,22 @@ The scripting API `preload` [event](/script/event) is also implemented as a tran
 
 Readability transformers perform **destructive** transformations, which may help with readability of decompiled output in particular.
 
-| Name                     | Description                                                                                                      |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| Strip annotations        | Removes annotation-related attributes (`*Annotations`), useful for mitigating "ASM crashers".                    |
-| Strip try-catches        | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                 |
-| Strip local variables    | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation. |
-| Strip generic signatures | Removes `Signature` attributes, useful when dealing with name obfuscation.                                       |
-| Strip debug information  | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                     |
+| Name                      | Description                                                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Strip annotations         | Removes annotation-related attributes (`*Annotations`), useful for mitigating "ASM crashers".                    |
+| Strip try-catches         | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                 |
+| Strip local variables     | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation. |
+| Strip synchronized blocks | Replaces all `monitorenter` and `monitorexit` instructions with `nop` instructions.                              |
+| Strip generic signatures  | Removes `Signature` attributes, useful when dealing with name obfuscation.                                       |
+| Strip debug information   | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                     |
 
 ### Normalization
 
 Normalization transformers perform functionally equivalent transformations, which mitigate common obfuscation techniques.
 
-| Name                         | Description                                                                                                               |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Verify attributes            | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
-| No-op unreachable code       | Replaces unreachable code with `nop` instructions.                                                                        |
-| Remove unnecessary modifiers | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
+| Name                           | Description                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Verify attributes              | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
+| Remove unnecessary modifiers   | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
+| Remove unnecessary try-catches | Removes exception table entries with nonsense ranges and/or handlers that only rethrow the caught exception.              |
+| No-op unreachable code         | Replaces unreachable code with `nop` instructions.                                                                        |
