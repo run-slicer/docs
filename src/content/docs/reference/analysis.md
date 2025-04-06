@@ -95,7 +95,7 @@ Readability transformers perform **destructive** transformations, which may help
 | Strip annotations         | Removes annotation-related attributes (`*Annotations`, `AnnotationDefault`), useful for mitigating "ASM crashers". |
 | Strip try-catches         | Removes exception table entries in `Code` attributes, useful when dealing with flow obfuscation.                   |
 | Strip local variables     | Removes `LocalVariable(Type)Table` and `MethodParameters` attributes, useful when dealing with name obfuscation.   |
-| Strip synchronized blocks | Replaces all `monitorenter` and `monitorexit` instructions with `nop` instructions.                                |
+| Strip synchronized blocks | Replaces all `monitorenter` and `monitorexit` instructions with `pop` instructions.                                |
 | Strip generic signatures  | Removes `Signature` attributes, useful when dealing with name obfuscation.                                         |
 | Strip debug information   | Removes `Deprecated`, `SourceFile`, `SourceDebugExtension` and `LineNumberTable` attributes.                       |
 
