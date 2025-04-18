@@ -17,23 +17,23 @@ Each option has common properties, like a `type`, `id` and an optional `label`, 
 
 ```js
 const option /*: Option */ = {
-    type: "...", // one of "button", "checkbox", "radio" or "group"; check the OptionType type
-    id: "my-script-option",
-    label: "My amazing option", // optional
-    // type-specific properties, ...
+  type: "...", // one of "button", "checkbox", "radio" or "group"; check the OptionType type
+  id: "my-script-option",
+  label: "My amazing option", // optional
+  // type-specific properties, ...
 };
 
 export default {
-    // ...
-    options: [option],
-    load(context /*: ScriptContext */) {
-        // this is where the event bus comes in
-        context.addEventListener("option_change", (e /*: OptionChangeEvent */) => {
-            console.log("An option has been changed: ", e.option.id);
-            console.log("Is it our option?", e.option === option);
-        });
-    },
-    unload() {},
+  // ...
+  options: [option],
+  load(context /*: ScriptContext */) {
+    // this is where the event bus comes in
+    context.addEventListener("option_change", (e /*: OptionChangeEvent */) => {
+      console.log("An option has been changed: ", e.option.id);
+      console.log("Is it our option?", e.option === option);
+    });
+  },
+  unload() {},
 };
 ```
 
@@ -43,9 +43,9 @@ The most ubiquitous of them all, the button. It does exactly what one would expe
 
 ```js
 const button /*: ButtonOption */ = {
-    type: "button",
-    id: "my-script-button",
-    label: "My amazing button",
+  type: "button",
+  id: "my-script-button",
+  label: "My amazing button",
 };
 
 // ...
@@ -59,10 +59,10 @@ _Checkbox checked state is not persisted by slicer and **will be RESET** on refr
 
 ```js
 const checkbox /*: CheckboxOption */ = {
-    type: "checkbox",
-    id: "my-script-checkbox",
-    label: "My amazing checkbox",
-    checked: false, // not checked by default
+  type: "checkbox",
+  id: "my-script-checkbox",
+  label: "My amazing checkbox",
+  checked: false, // not checked by default
 };
 
 // ...
@@ -76,20 +76,20 @@ _Radio button selection is not persisted by slicer and **will be RESET** on refr
 
 ```js
 const radio /*: RadioOption */ = {
-    type: "radio",
-    id: "my-script-radio",
-    label: "My amazing radio button",
-    items: [
-        {
-            id: "apple",
-            label: "Apples", // optional, defaults to the ID
-        },
-        {
-            id: "orange",
-            label: "Oranges",
-        },
-    ],
-    selected: "apple", // a selected item ID, apples are default!!
+  type: "radio",
+  id: "my-script-radio",
+  label: "My amazing radio button",
+  items: [
+    {
+      id: "apple",
+      label: "Apples", // optional, defaults to the ID
+    },
+    {
+      id: "orange",
+      label: "Oranges",
+    },
+  ],
+  selected: "apple", // a selected item ID, apples are default!!
 };
 
 // ...
@@ -101,23 +101,23 @@ Last but not least, there's the group option for cases where you need to group r
 
 ```js
 const group /*: GroupOption */ = {
-    type: "group",
-    id: "my-script-group",
-    label: "My amazing group",
-    options: [
-        // options declared like normal
-        {
-            type: "button",
-            id: "my-script-button",
-            label: "My amazing button",
-        },
-        {
-            type: "checkbox",
-            id: "my-script-checkbox",
-            label: "My amazing checkbox",
-            checked: false,
-        },
-    ],
+  type: "group",
+  id: "my-script-group",
+  label: "My amazing group",
+  options: [
+    // options declared like normal
+    {
+      type: "button",
+      id: "my-script-button",
+      label: "My amazing button",
+    },
+    {
+      type: "checkbox",
+      id: "my-script-checkbox",
+      label: "My amazing checkbox",
+      checked: false,
+    },
+  ],
 };
 
 // ...

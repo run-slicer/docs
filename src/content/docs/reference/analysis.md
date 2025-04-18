@@ -45,7 +45,7 @@ Regular expressions are a powerful way to search almost anything in the class fi
 
 :::
 
-![Search example](/assets/search.png)
+![Search example](./assets/search.png)
 
 ### Constant pool
 

@@ -14,7 +14,7 @@ You can listen to an event using the `addEventListener` function on a context, l
 ```js
 // omitting the script body, this can be done anywhere with a context
 context.addEventListener("event_type", (e /*: any */, context /*: ScriptContext */) => {
-    // this is the event handler
+  // this is the event handler
 });
 ```
 
@@ -22,7 +22,7 @@ Now, `event_type` is obviously not a real event identifier, so let's try it out 
 
 ```js
 context.addEventListener("preload", (e /*: PreloadEvent */) => {
-    console.log("We're loading a class file: ", e.name);
+  console.log("We're loading a class file: ", e.name);
 });
 ```
 
@@ -32,7 +32,7 @@ The event is mutable, so you can mutate its properties to change what gets to sl
 
 ```js
 context.addEventListener("preload", (e /*: PreloadEvent */) => {
-    e.data = e.data.subarray(4); // chop off first 4 bytes
+  e.data = e.data.subarray(4); // chop off first 4 bytes
 });
 ```
 
@@ -44,7 +44,7 @@ If you wanted to stop listening for an event, you can use the `removeEventListen
 
 ```js
 const handler = (e /*: any */, context /*: ScriptContext */) => {
-    // this is the event handler
+  // this is the event handler
 };
 
 context.addEventListener("event_type", handler); // listen to the event

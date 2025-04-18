@@ -3,40 +3,43 @@ title: Welcome
 description: The official documentation site for slicer, a modern Java reverse engineering tool for the web.
 template: splash
 editUrl: false
+lastUpdated: false
 hero:
-    title: slicer
-    tagline: A modern Java reverse engineering tool for the web.
-    actions:
-        - text: View the reference
-          link: /reference
-          icon: right-arrow
-        - text: Use the tool
-          link: https://slicer.run
-          icon: external
-          variant: minimal
+  title: slicer
+  tagline: A modern Java reverse engineering tool for the web.
+  actions:
+    - text: View the reference
+      link: /reference
+      icon: right-arrow
+    - text: Use the tool
+      link: https://slicer.run
+      icon: external
+      variant: minimal
 banner:
-    content: |
-        slicer (and the documentation) is in active development, so things might be missing.
-        Watch out for updates!
+  content: |
+    slicer (and the documentation) is in active development, so things might be missing.
+    Watch out for updates!
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## Features
-
-<br />
-
-<CardGrid stagger>
-    <Card title="Disassembly" icon="pencil">
-        Disassemble and decompile Java class files.
-    </Card>
-    <Card title="Control flow visualization" icon="random">
-        Visualize bytecode control flow in a simple flow graph.
-    </Card>
-    <Card title="Search" icon="magnifier">
-        Traverse bytecode constants, members and much more.
-    </Card>
-    <Card title="Scripting API" icon="setting">
-        Programmatically manipulate the editor with JavaScript.
-    </Card>
+<CardGrid>
+  <Card title="Disassembly" icon="pencil">
+    Disassemble and decompile Java class files.
+  </Card>
+  <Card title="Control flow visualization" icon="random">
+    Visualize bytecode control flow in a simple flow graph.
+  </Card>
+  <Card title="Search" icon="magnifier">
+    Traverse bytecode constants, members and much more.
+  </Card>
+  <Card title="Transformers" icon="puzzle">
+    Transform class files to automatically thwart obfuscation techniques.
+  </Card>
+  <Card title="Export" icon="download">
+    Export disassembled (and transformed) class files quickly and in bulk.
+  </Card>
+  <Card title="Scripting API" icon="setting">
+    Programmatically manipulate the editor with JavaScript.
+  </Card>
 </CardGrid>

@@ -40,7 +40,7 @@ By default, exception handler edges are not visualized, as they can become obstr
 
 :::
 
-![](/assets/flow_graph.png)
+![](./assets/flow_graph.png)
 
 ## Export
 

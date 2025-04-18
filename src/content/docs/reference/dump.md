@@ -23,4 +23,4 @@ Class instance sizes are merely educated estimates - it is impossible to concret
 
 :::
 
-![](/assets/heap_dump.png)
+![](./assets/heap_dump.png)

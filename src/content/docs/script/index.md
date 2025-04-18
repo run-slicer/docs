@@ -9,15 +9,15 @@ Every script must default export two essential properties, `load` and `unload` f
 
 ```js
 export default {
-    name: "example script", // optional
-    description: "An example slicer script in JS.", // optional
-    version: "1.0.0-SNAPSHOT", // optional
-    load() /*: void | Promise<void> */ {
-        console.log("Loaded!");
-    },
-    unload() /*: void | Promise<void> */ {
-        console.log("Unloaded!");
-    },
+  name: "example script", // optional
+  description: "An example slicer script in JS.", // optional
+  version: "1.0.0-SNAPSHOT", // optional
+  load() /*: void | Promise<void> */ {
+    console.log("Loaded!");
+  },
+  unload() /*: void | Promise<void> */ {
+    console.log("Unloaded!");
+  },
 } /* satisfies Script */;
 ```
 
@@ -45,15 +45,15 @@ This context is always passed into `load` and `unload`, where you can access it:
 
 ```js
 export default {
-    name: "example script",
-    // ...
-    load(context /*: ScriptContext */) {
-        console.log("Loaded!");
-        console.log("That's us: ", context.script.name);
-    },
-    unload(context /*: ScriptContext */) {
-        console.log("Unloaded!");
-    },
+  name: "example script",
+  // ...
+  load(context /*: ScriptContext */) {
+    console.log("Loaded!");
+    console.log("That's us: ", context.script.name);
+  },
+  unload(context /*: ScriptContext */) {
+    console.log("Unloaded!");
+  },
 };
 ```
 

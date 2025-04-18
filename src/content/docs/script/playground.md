@@ -14,4 +14,4 @@ The playground has access to the root scripting context under the `context` glob
 
 **Note**, the evaluator context is cleared when the tab is closed - you will lose any defined local variables.
 
-![Playground example](/assets/playground.png)
+![Playground example](./assets/playground.png)

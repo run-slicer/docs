@@ -31,44 +31,44 @@ _This property directly maps to slicer's internal language ID representation, po
 
 ```js
 const myDisasm /*: Disassembler */ = {
-    id: "my-disasm",
-    label: "My disassembler", // optional
-    version: "1.0.0", // optional
-    language: "java", // optional
-    options: {}, // a string-to-string mapping of applied disassembler options, modified by slicer and scripts, optional
+  id: "my-disasm",
+  label: "My disassembler", // optional
+  version: "1.0.0", // optional
+  language: "java", // optional
+  options: {}, // a string-to-string mapping of applied disassembler options, modified by slicer and scripts, optional
 
-    async class(
-        name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
-        source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
-    ) /*: string | Promise<string> */ {
-        const data /*: Uint8Array | null */ = await source(name);
-        if (!data) return ""; // this should never happen
+  async class(
+    name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
+    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+  ) /*: string | Promise<string> */ {
+    const data /*: Uint8Array | null */ = await source(name);
+    if (!data) return ""; // this should never happen
 
-        const myOption = this.options?.["my-option"];
-        // disassembler logic goes here
-    },
-    // optional
-    async method(
-        name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
-        signature /*: string */, // a method name and descriptor joined together, i.e. main([Ljava/lang/String;)V
-        source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
-    ) /*: string | Promise<string> */ {
-        const data /*: Uint8Array | null */ = await source(name);
-        if (!data) return ""; // this should never happen
+    const myOption = this.options?.["my-option"];
+    // disassembler logic goes here
+  },
+  // optional
+  async method(
+    name /*: string */, // an internal name of the disassembled class, i.e. com/example/Main
+    signature /*: string */, // a method name and descriptor joined together, i.e. main([Ljava/lang/String;)V
+    source /*: (name: string) => (Uint8Array | null) | Promise<Uint8Array | null> */
+  ) /*: string | Promise<string> */ {
+    const data /*: Uint8Array | null */ = await source(name);
+    if (!data) return ""; // this should never happen
 
-        const myOption = this.options?.["my-option"];
-        // disassembler logic goes here
-    },
+    const myOption = this.options?.["my-option"];
+    // disassembler logic goes here
+  },
 };
 
 export default {
-    // ...
-    load(context /*: ScriptContext */) {
-        context.disasm.add(myDisasm);
-    },
-    unload(context /*: ScriptContext */) {
-        context.disasm.remove(myDisasm.id);
-    },
+  // ...
+  load(context /*: ScriptContext */) {
+    context.disasm.add(myDisasm);
+  },
+  unload(context /*: ScriptContext */) {
+    context.disasm.remove(myDisasm.id);
+  },
 };
 ```
 

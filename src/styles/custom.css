@@ -1,47 +1,54 @@
 /* change weight of font 600 -> 500, looks a little too bold */
 @font-face {
-    font-family: "Geist Sans";
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src:
-        url(@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2) format("woff2"),
-        url(@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff) format("woff");
+  font-family: "Geist Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    url(@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff2) format("woff2"),
+    url(@fontsource/geist-sans/files/geist-sans-latin-500-normal.woff) format("woff");
 }
 
 :root {
-    --sl-font: "Geist Sans";
-    --sl-font-mono: "Geist Mono";
+  --sl-font: "Geist Sans";
+  --sl-font-mono: "Geist Mono";
+}
+
+/* fix too large TOC on large screens */
+@media (min-width: 96rem) {
+  :root {
+    --sl-content-width: 64rem;
+  }
 }
 
 /* Dark mode colors. */
 :root {
-    --sl-color-accent-low: hsl(240 5.9% 10%);
-    --sl-color-accent: hsl(240 3.7% 15.9%);
-    --sl-color-accent-high: hsl(0 0% 98%);
-    --sl-color-white: hsl(240 5.9% 98%);
-    --sl-color-gray-1: hsl(240 5.9% 96%);
-    --sl-color-gray-2: hsl(240 5.9% 84%);
-    --sl-color-gray-3: hsl(240 5.9% 67%);
-    --sl-color-gray-4: hsl(240 5.9% 45%);
-    --sl-color-gray-5: hsl(240 5.9% 20%);
-    --sl-color-gray-6: hsl(240 5.9% 10%);
-    --sl-color-gray-7: hsl(240 5.9% 5%);
-    --sl-color-black: hsl(240 5.9% 3.9%);
+  --sl-color-accent-low: hsl(240 5.9% 10%);
+  --sl-color-accent: hsl(240 3.7% 15.9%);
+  --sl-color-accent-high: hsl(0 0% 98%);
+  --sl-color-white: hsl(240 5.9% 98%);
+  --sl-color-gray-1: hsl(240 5.9% 96%);
+  --sl-color-gray-2: hsl(240 5.9% 84%);
+  --sl-color-gray-3: hsl(240 5.9% 67%);
+  --sl-color-gray-4: hsl(240 5.9% 45%);
+  --sl-color-gray-5: hsl(240 5.9% 20%);
+  --sl-color-gray-6: hsl(240 5.9% 10%);
+  --sl-color-gray-7: hsl(240 5.9% 5%);
+  --sl-color-black: hsl(240 5.9% 3.9%);
 }
 
 /* Light mode colors. */
 :root[data-theme="light"] {
-    --sl-color-accent-low: hsl(0 0% 98%);
-    --sl-color-accent: hsl(240 3.7% 15.9%);
-    --sl-color-accent-high: hsl(240 5.9% 10%);
-    --sl-color-white: hsl(240 5.9% 3.9%);
-    --sl-color-gray-1: hsl(240 5.9% 5%);
-    --sl-color-gray-2: hsl(240 5.9% 10%);
-    --sl-color-gray-3: hsl(240 5.9% 20%);
-    --sl-color-gray-4: hsl(240 5.9% 45%);
-    --sl-color-gray-5: hsl(240 5.9% 67%);
-    --sl-color-gray-6: hsl(240 5.9% 84%);
-    --sl-color-gray-7: hsl(240 5.9% 96%);
-    --sl-color-black: hsl(240 5.9% 98%);
+  --sl-color-accent-low: hsl(0 0% 98%);
+  --sl-color-accent: hsl(240 3.7% 15.9%);
+  --sl-color-accent-high: hsl(240 5.9% 10%);
+  --sl-color-white: hsl(240 5.9% 3.9%);
+  --sl-color-gray-1: hsl(240 5.9% 5%);
+  --sl-color-gray-2: hsl(240 5.9% 10%);
+  --sl-color-gray-3: hsl(240 5.9% 20%);
+  --sl-color-gray-4: hsl(240 5.9% 45%);
+  --sl-color-gray-5: hsl(240 5.9% 67%);
+  --sl-color-gray-6: hsl(240 5.9% 84%);
+  --sl-color-gray-7: hsl(240 5.9% 96%);
+  --sl-color-black: hsl(240 5.9% 98%);
 }

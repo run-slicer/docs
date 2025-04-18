@@ -46,7 +46,7 @@ Constant pool entries are represented in a format consisting of the entry type i
 - `NAME_AND_TYPE <name, UTF8 value> <descriptor, UTF8 value>` - member name and descriptor reference
 - `DYNAMIC/INVOKE_DYNAMIC <bootstrap method index> <member name and descriptor, NAME_AND_TYPE value>`
 - `METHOD_HANDLE <handle kind> <METHODREF value>`
-    - handle kinds: `GET_FIELD`, `GET_STATIC`, `PUT_FIELD`, `PUT_STATIC`, `INVOKE_VIRTUAL`, `INVOKE_STATIC`, `INVOKE_SPECIAL`, `NEW_INVOKE_SPECIAL`, `INVOKE_INTERFACE`
+  - handle kinds: `GET_FIELD`, `GET_STATIC`, `PUT_FIELD`, `PUT_STATIC`, `INVOKE_VIRTUAL`, `INVOKE_STATIC`, `INVOKE_SPECIAL`, `NEW_INVOKE_SPECIAL`, `INVOKE_INTERFACE`
 
 ### Pseudocode
 

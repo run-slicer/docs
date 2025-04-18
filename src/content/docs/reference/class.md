@@ -16,7 +16,7 @@ The Overview tab lists basic properties, such as:
 - generic signature, if present
 - source file attribute, if present
 
-![](/assets/class/overview.png)
+![](./assets/class/overview.png)
 
 ## Constant pool
 
@@ -29,7 +29,7 @@ these references - only the values of the referenced entries are displayed (for 
 
 :::
 
-![](/assets/class/pool.png)
+![](./assets/class/pool.png)
 
 ## Fields & methods
 
@@ -43,5 +43,5 @@ _Note, not all disassemblers are available for single-method disassembly._
 
 :::
 
-![](/assets/class/fields.png)
-![](/assets/class/methods.png)
+![](./assets/class/fields.png)
+![](./assets/class/methods.png)
