@@ -103,13 +103,13 @@ Readability transformers perform **destructive** transformations, which may help
 
 Normalization transformers perform functionally equivalent transformations, which mitigate common obfuscation techniques.
 
-| Name                               | Description                                                                                                               |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Verify attributes                  | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
-| Remove unnecessary modifiers       | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
-| Remove unnecessary try-catches     | Removes exception table entries with nonsense ranges and/or handlers that only rethrow the caught exception.              |
-| Remove unnecessary local variables | Replaces local variable store instructions with `pop` instructions if the variables are never read.                       |
-| No-op unreachable code             | Replaces unreachable code with `nop` instructions.                                                                        |
+| Name                           | Description                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Verify attributes              | Attempts to selectively strip attributes containing garbled data, mainly intended to mitigate "ASM crashers".             |
+| Remove unnecessary modifiers   | Removes `ACC_SYNTHETIC` and `ACC_BRIDGE` access modifiers where appropriate, useful when dealing with access obfuscation. |
+| Remove unnecessary try-catches | Removes exception table entries with nonsense ranges and/or handlers that only rethrow the caught exception.              |
+| Remove unused local variables  | Replaces local variable store instructions with `pop` instructions if the variables are never read.                       |
+| No-op unreachable code         | Replaces unreachable code with `nop` instructions.                                                                        |
 
 #### Verification
 
