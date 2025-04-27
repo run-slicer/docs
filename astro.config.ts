@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightHeadingBadges from "starlight-heading-badges";
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,12 +39,14 @@ export default defineConfig({
         "@fontsource/geist-mono/600.css",
         "./src/styles/custom.css",
       ],
-      plugins: [starlightHeadingBadges()],
       components: {
         Head: "./src/components/Head.astro",
         Footer: "./src/components/Footer.astro",
       },
       expressiveCode: {
+        frames: {
+          extractFileNameFromCode: false,
+        },
         emitExternalStylesheet: false,
       },
     }),
