@@ -33,12 +33,7 @@ export default defineConfig({
           },
         },
       ],
-      customCss: [
-        "@fontsource/geist-sans/400.css",
-        "@fontsource/geist-mono/400.css",
-        "@fontsource/geist-mono/600.css",
-        "./src/styles/custom.css",
-      ],
+      customCss: ["./src/styles/custom.css"],
       components: {
         Head: "./src/components/Head.astro",
         Footer: "./src/components/Footer.astro",
