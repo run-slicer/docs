@@ -9,7 +9,7 @@ slicer does not employ any obfuscator-specific deobfuscation features, but it do
 - unverifiable bytecode, "ASM crashers"
 
 Disassemblers/decompilers **may fail** or take a considerable amount of time to complete when faced with more advanced obfuscation,
-however you should still be able to use the [integrated disassembler](/reference/disasm#integrated-disassembler) to view a representation of the bytecode.
+however you should still be able to use the [integrated disassembler](/reference/disasm#integrated-disassembler-slicer) to view a representation of the bytecode.
 
 ## Transformers
 
