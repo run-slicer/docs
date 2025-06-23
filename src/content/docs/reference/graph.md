@@ -7,7 +7,7 @@ slicer allows you to explore the control flow of a method and an inheritance gra
 
 This view can be opened in the context menu of a project entry (`Open as` -> `Graph`) or in the menu bar for an already opened view of a class file (`View` -> `Graph`).
 
-## Control flow graph
+## Control flow
 
 The control flow graph visualizes bytecode execution in a method using a top-to-bottom flow diagram.
 
@@ -44,7 +44,7 @@ By default, exception handler edges are not visualized, as they can become obstr
 
 ![](./assets/flow_graph.png)
 
-## Inheritance graph
+## Inheritance
 
 The inheritance graph visualizes class inheritance and interface implementation using a bottom-to-top flow diagram.
 
