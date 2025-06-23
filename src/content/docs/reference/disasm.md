@@ -1133,7 +1133,7 @@ It produces clean and easily comprehensible output with a focus on obfuscation r
 slicer includes a basic disassembler to power several bytecode analysis features, such as:
 
 - the [class view](/reference/class) (prettifying class file constructs)
-- the [flow graph](/reference/flow) (prettifying instructions and computing the graph itself)
+- the [flow graph](/reference/graph#control-flow-graph) (prettifying instructions and computing the graph itself)
 - the [search](/reference/analysis#search) (prettifying constant pool entries)
 - the pseudocode disassembler
 

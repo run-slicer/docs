@@ -1,15 +1,17 @@
 ---
-title: Flow graph
-description: Reference of the control flow graph feature.
+title: Graph
+description: Reference of the control flow and inheritance graph feature.
 ---
 
-slicer allows you to explore the control flow of a method using a top-to-bottom flow diagram.
+slicer allows you to explore the control flow of a method and an inheritance graph of a class using a flow diagram.
 
-This view can be opened in the context menu of a project entry (`Open as` -> `Flow graph`) or in the menu bar for an already opened view of a class file (`View` -> `Flow graph`).
+This view can be opened in the context menu of a project entry (`Open as` -> `Graph`) or in the menu bar for an already opened view of a class file (`View` -> `Graph`).
 
-## Components
+## Control flow graph
 
-A flow graph is composed of two parts: nodes and edges.
+The control flow graph visualizes bytecode execution in a method using a top-to-bottom flow diagram.
+
+If a graph has no nodes and no edges, it is likely an abstract method, which has no `Code` attribute.
 
 ### Nodes
 
@@ -42,9 +44,32 @@ By default, exception handler edges are not visualized, as they can become obstr
 
 ![](./assets/flow_graph.png)
 
+## Inheritance graph
+
+The inheritance graph visualizes class inheritance and interface implementation using a bottom-to-top flow diagram.
+
+### Nodes
+
+A node is a block representing one class or interface. The node that represents the viewed class is highlighted using the primary color of the UI.
+
+:::tip
+
+By default, super types implicit in the context of the Java language are hidden (i.e. `java.lang.Object`). You can turn them on/off using the ⚪ button in the inheritance graph controls.
+
+:::
+
+### Edges
+
+An edge is a line that connects two classes/two interfaces/a class with an interface. An edge can represent:
+
+- class inheritance (`class Class1 extends Class2` - a full line)
+- interface implementation (`class Class1 implements Class2` - a dashed line)
+
+![](./assets/hierarchy.png)
+
 ## Export
 
-Flow graphs can be exported into SVG or PNG format in the context menu (right click -> `Export`).
+Graphs can be exported into SVG or PNG format in the context menu (right click -> `Export`).
 
 :::note
 
