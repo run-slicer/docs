@@ -7,6 +7,11 @@ description: Reference of sharing capabilities.
   table td {
     vertical-align: middle;
   }
+
+  /* force first column to max badge width */
+  table tr > :first-child {
+    width: 200px;
+  }
 </style>
 
 slicer allows you to read files from an HTTP server (with an appropriate CORS setup) using the `url` search parameter.
@@ -27,7 +32,9 @@ echo "https://bytebin.lucko.me/$(curl --progress-bar --data-binary @./path/to/fi
 
 A set of stylized buttons is provided for linking to slicer, akin to GitHub repository badges or the Vercel deploy button.
 
-| Button                                       | URL                                       | Markdown                                                                     |
-| -------------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------- |
-| ![](https://slicer.run/button.svg)           | `https://slicer.run/button.svg`           | `[![](https://slicer.run/button.svg)](https://slicer.run?url=...)`           |
-| ![](https://slicer.run/button-decompile.svg) | `https://slicer.run/button-decompile.svg` | `[![](https://slicer.run/button-decompile.svg)](https://slicer.run?url=...)` |
+| Button                                               | URL                                               | Markdown                                                                             |
+| ---------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| ![](https://slicer.run/button-disassemble-small.svg) | `https://slicer.run/button-disassemble-small.svg` | `[![](https://slicer.run/button-disassemble-small.svg)](https://slicer.run?url=...)` |
+| ![](https://slicer.run/button-disassemble-large.svg) | `https://slicer.run/button-disassemble-large.svg` | `[![](https://slicer.run/button-disassemble-large.svg)](https://slicer.run?url=...)` |
+| ![](https://slicer.run/button-decompile-small.svg)   | `https://slicer.run/button-decompile-small.svg`   | `[![](https://slicer.run/button-decompile-small.svg)](https://slicer.run?url=...)`   |
+| ![](https://slicer.run/button-decompile-large.svg)   | `https://slicer.run/button-decompile-large.svg`   | `[![](https://slicer.run/button-decompile-large.svg)](https://slicer.run?url=...)`   |

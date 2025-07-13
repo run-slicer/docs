@@ -3,6 +3,17 @@ title: Introduction
 description: Introduction to the slicer scripting API.
 ---
 
+<style>
+  table td {
+    vertical-align: middle;
+  }
+
+  /* force first column to max badge width */
+  table tr > :first-child {
+    width: 200px;
+  }
+</style>
+
 slicer features a simple JavaScript scripting API, useful for doing preprocessing on class files, e.g. deobfuscation.
 
 Every script must default export two essential properties, `load` and `unload` functions, however it can also expose metadata to display to the user.
@@ -34,6 +45,13 @@ Scripts are meant to be fairly simple, but they can also be pretty extensive, so
 Scripts can be shared using a `script` URL parameter, the user will be prompted about importing when slicer loads.
 
 For example, `https://slicer.run?script=https://a-cdn.com/my-slicer-script/index.js` imports a script from `https://a-cdn.com/my-slicer-script/index.js`.
+
+A set of stylized buttons is provided for linking to scripts, akin to GitHub repository badges or the Vercel deploy button.
+
+| Button                                          | URL                                          | Markdown                                                                           |
+| ----------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------- |
+| ![](https://slicer.run/button-import-small.svg) | `https://slicer.run/button-import-small.svg` | `[![](https://slicer.run/button-import-small.svg)](https://slicer.run?script=...)` |
+| ![](https://slicer.run/button-import-large.svg) | `https://slicer.run/button-import-large.svg` | `[![](https://slicer.run/button-import-large.svg)](https://slicer.run?script=...)` |
 
 :::
 
