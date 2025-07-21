@@ -15,6 +15,11 @@ If you expect to load a large amount of classes (i.e. tens of thousands) into th
 
 :::
 
+slicer also utilizes a copy of the JDK standard library (version 21) to improve output accuracy during disassembly.
+This can have a performance impact on initial disassembly, as the essential classes haven't been fetched and cached - it can take longer.
+
+Of course, you can also disable the usage of the standard library with the `Analysis` -> `JDK classes` option and rely purely on your workspace classes.
+
 ## Search
 
 Search allows you to search for identifying aspects of class files, such as constant pool values and class members.
@@ -26,6 +31,9 @@ There are three search modes, selectable in the dropdown menu:
 - Partial match (case-sensitive)
 - Exact match (case-sensitive)
 - Regular expression (RegEx pattern occurrences)
+
+and a special mode, only available for fields and methods, **Reference**.
+As the name implies, it searches for references of members instead of their declarations.
 
 :::tip
 
@@ -47,18 +55,27 @@ Regular expressions are a powerful way to search almost anything in the class fi
 
 ![Search example](./assets/search.png)
 
-### Constant pool
+### Strings
 
-Searching in the constant pool is done by checking for matches against [disassembled representations](/reference/disasm#constant-pool) of the underlying entries.
+Strings are the default, most basic search option. This mode searches for string entries in the constant pool, equivalent to string literals in the Java language.
+
+**This mode does not search in all string-like entries in the constant pool**, so it will never find member names/descriptors or the like, only actual strings.
+If you wish to search for those, use the pseudocode mode.
+
+### Pseudocode
+
+The pseudocode mode is useful for checking raw matches against the [disassembled representation](/reference/disasm#integrated-disassembler-slicer).
+Currently, only the constant pool can be searched via this mode, as analysis results of the `Code` attribute are not available during search-time.
 
 Commonly searched aspects and queries may look like this:
 
-| Searching?                     | Mode               | Query                               |
-| ------------------------------ | ------------------ | ----------------------------------- |
-| All strings in the class file  | Regular expression | `^STRING`                           |
-| Reference to a specific class  | Exact match/any    | `CLASS package/SearchedClass`       |
-| Reference to a specific field  | Exact match/any    | `NAME_AND_TYPE theField Lthe/Type;` |
-| Reference to a specific method | Exact match/any    | `NAME_AND_TYPE theMethod ()V`       |
+| Searching?                                | Mode               | Query                               |
+| ----------------------------------------- | ------------------ | ----------------------------------- |
+| All strings in the class file             | Regular expression | `^STRING`                           |
+| All string-like entries in the class file | Regular expression | `^UTF8`                             |
+| Reference to a specific class             | Exact match/any    | `CLASS package/SearchedClass`       |
+| Reference to a specific field             | Exact match/any    | `NAME_AND_TYPE theField Lthe/Type;` |
+| Reference to a specific method            | Exact match/any    | `NAME_AND_TYPE theMethod ()V`       |
 
 ### Members
 
@@ -76,7 +93,7 @@ Commonly searched aspects and queries may look like this:
 ## Transformers
 
 Transformers are a convenient way to _transform_ class files before they're analyzed (just-in-time).
-They can be applied in the `Analysis -> Transformers` menu.
+They can be applied in the `Analysis` -> `Transformers` menu.
 
 slicer includes several options that may improve the chances of successful disassembly when dealing with obfuscated code.
 
