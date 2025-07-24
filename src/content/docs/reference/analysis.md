@@ -11,14 +11,14 @@ When a class is to be disassembled or the like, a full version of the model is c
 :::tip
 
 If you expect to load a large amount of classes (i.e. tens of thousands) into the workspace, you may want to disable background analysis
-(`Analysis` -> untick `Background`) and rely only on just-in-time analysis to save on time and memory costs.
+(uncheck `Analysis` -> `Background analysis` in preferences) and rely only on just-in-time analysis to save on time and memory costs.
 
 :::
 
 slicer also utilizes a copy of the JDK standard library (version 21) to improve output accuracy during disassembly.
 This can have a performance impact on initial disassembly, as the essential classes haven't been fetched and cached - it can take longer.
 
-Of course, you can also disable the usage of the standard library with the `Analysis` -> `JDK classes` option and rely purely on your workspace classes.
+Of course, you can also disable the usage of the standard library with the `Analysis` -> `Fetch JDK classes` option and rely purely on your workspace classes.
 
 ## Search
 
