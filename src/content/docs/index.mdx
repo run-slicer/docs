@@ -10,8 +10,8 @@ banner:
 
 import { LinkButton, Card, CardGrid } from "@astrojs/starlight/components";
 
-<div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 1rem;">
-  <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; padding-block: 1rem;">
+<div className="hero-container">
+  <div className="hero-content">
     <div>
       slicer is a modern Java reverse engineering tool, built with an emphasis on simplicity and convenience.
 
@@ -39,7 +39,7 @@ import { LinkButton, Card, CardGrid } from "@astrojs/starlight/components";
     </div>
 
   </div>
-  <div>![](./assets/slicer.png)</div>
+  <div className="hero-image">![](./assets/slicer.png)</div>
 </div>
 
 ## Features

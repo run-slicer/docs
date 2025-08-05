@@ -36,3 +36,28 @@
   --sl-color-gray-7: hsl(240 5.9% 96%);
   --sl-color-black: hsl(240 5.9% 98%);
 }
+
+/* index page hero styles */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
