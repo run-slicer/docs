@@ -1,7 +1,8 @@
 ---
 import config from "virtual:starlight/user-config";
 
-const { entry, lang, siteTitle } = Astro.locals.starlightRoute;
+let { entry, lang, siteTitle } = Astro.locals.starlightRoute;
+siteTitle = `${siteTitle} docs`; // append "docs" to meta
 const { data } = entry;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);

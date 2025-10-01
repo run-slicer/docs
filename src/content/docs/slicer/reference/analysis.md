@@ -3,7 +3,7 @@ title: Analysis
 description: Reference of analysis capabilities.
 ---
 
-To enable features, such as the integrated pseudocode disassembler and the [class view](/reference/class), slicer creates in-memory models of classes.
+To enable features, such as the integrated pseudocode disassembler and the [class view](/slicer/reference/class), slicer creates in-memory models of classes.
 
 By default, a partial version of the model is created for all classes in the background - this is called background analysis.
 When a class is to be disassembled or the like, a full version of the model is created and cached.
@@ -64,7 +64,7 @@ If you wish to search for those, use the pseudocode mode.
 
 ### Pseudocode
 
-The pseudocode mode is useful for checking raw matches against the [disassembled representation](/reference/disasm#integrated-disassembler-slicer).
+The pseudocode mode is useful for checking raw matches against the [disassembled representation](/slicer/reference/disasm#integrated-disassembler-slicer).
 Currently, only the constant pool can be searched via this mode, as analysis results of the `Code` attribute are not available during search-time.
 
 Commonly searched aspects and queries may look like this:
@@ -99,7 +99,7 @@ slicer includes several options that may improve the chances of successful disas
 
 :::note
 
-The scripting API `preload` [event](/script/event) is also implemented as a transformer, and it is run as the _last_ transformer in the pipeline.
+The scripting API `preload` [event](/slicer/script/event) is also implemented as a transformer, and it is run as the _last_ transformer in the pipeline.
 
 :::
 

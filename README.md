@@ -1,3 +1,3 @@
 # docs
 
-The main documentation site for slicer.
+The main documentation site for the katana-project organization.

@@ -3,9 +3,9 @@ title: Disassembler
 description: Overview of the disassembler API.
 ---
 
-The disassembler API allows you to introspect and manipulate disassemblers in slicer. slicer offers several disassemblers/decompilers [out of the box](/reference/disasm), but this API makes it possible to add custom ones via a script.
+The disassembler API allows you to introspect and manipulate disassemblers in slicer. slicer offers several disassemblers/decompilers [out of the box](/slicer/reference/disasm), but this API makes it possible to add custom ones via a script.
 
-All disassembler operations are done via a `DisassemblerContext`, which you can once again access on [the context](/script/#context).
+All disassembler operations are done via a `DisassemblerContext`, which you can once again access on [the context](/slicer/script/#context).
 
 ```js
 context.disasm.all(); // lists all disassemblers

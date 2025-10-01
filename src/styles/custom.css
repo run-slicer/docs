@@ -37,6 +37,14 @@
   --sl-color-black: hsl(240 5.9% 98%);
 }
 
+.site-title {
+  font-size: 1.25rem;
+}
+
+.site-title img {
+  border-radius: 0.25rem;
+}
+
 /* index page hero styles */
 .hero-container {
   display: grid;

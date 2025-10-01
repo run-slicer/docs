@@ -1,39 +1,25 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightSidebarTopics from "starlight-sidebar-topics";
 import starlightLinksValidator from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://docs.slicer.run",
+  site: "https://docs.katana-project.org",
   integrations: [
     starlight({
-      title: "slicer docs",
-      description: "The official documentation site for slicer, a modern Java reverse engineering tool for the web.",
+      title: "katana-project",
+      description: "The official documentation site for the katana-project organization.",
+      favicon: "/favicon.ico",
+      logo: {
+        src: "/public/favicon-192x192.png",
+        alt: "katana-project logo",
+      },
       social: [{ label: "GitHub", href: "https://github.com/run-slicer", icon: "github" }],
       lastUpdated: true,
       editLink: {
         baseUrl: "https://github.com/run-slicer/docs/edit/main/",
       },
-      sidebar: [
-        {
-          label: "Reference",
-          autogenerate: {
-            directory: "reference",
-          },
-        },
-        {
-          label: "Scripting API",
-          autogenerate: {
-            directory: "script",
-          },
-        },
-        {
-          label: "Resources",
-          autogenerate: {
-            directory: "resources",
-          },
-        },
-      ],
       customCss: ["./src/styles/custom.css"],
       components: {
         Head: "./src/components/Head.astro",
@@ -45,7 +31,44 @@ export default defineConfig({
         },
         emitExternalStylesheet: false,
       },
-      plugins: [starlightLinksValidator()],
+      plugins: [
+        starlightSidebarTopics(
+          [
+            {
+              id: "slicer",
+              label: "slicer",
+              link: "/slicer/",
+              icon: "slicer",
+              items: [
+                {
+                  label: "Reference",
+                  autogenerate: {
+                    directory: "slicer/reference",
+                  },
+                },
+                {
+                  label: "Scripting API",
+                  autogenerate: {
+                    directory: "slicer/script",
+                  },
+                },
+                {
+                  label: "Resources",
+                  autogenerate: {
+                    directory: "slicer/resources",
+                  },
+                },
+              ],
+            },
+          ],
+          {
+            topics: {
+              slicer: ["/slicer/reference", "/slicer/script"],
+            },
+          }
+        ),
+        starlightLinksValidator(),
+      ],
     }),
   ],
   build: {

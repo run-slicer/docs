@@ -5,7 +5,7 @@ description: Overview of the editor manipulation API.
 
 The editor API allows you to introspect and trigger updates to the currently opened editor panes, like refreshing them in case of an option changing and the view now being invalid.
 
-A basic unit of the editor is a tab. Tabs can be looked up using the `EditorContext` API, which you can get, once again, from [the context](/script/#context).
+A basic unit of the editor is a tab. Tabs can be looked up using the `EditorContext` API, which you can get, once again, from [the context](/slicer/script/#context).
 
 ```js
 context.editor.tabs(); // gets all currently opened tabs

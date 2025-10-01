@@ -1,0 +1,12 @@
+diff --git a/components/Icons.ts b/components/Icons.ts
+index 41316b960537d689ae86ee7c056f363d6cc39214..e041606ca1fef8b3c92340ac4933d21e0a3fbc17 100644
+--- a/components/Icons.ts
++++ b/components/Icons.ts
+@@ -193,6 +193,7 @@ export const BuiltInIcons = {
+ 		'<path d="M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/>',
+ 	substack:
+ 		'<path d="M22.5 8.2h-21V5.4h21v2.8zm-21 2.6V24L12 18.1 22.5 24V10.8h-21zM22.5 0h-21v2.8h21V0z"/>',
++  slicer: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coffee-icon lucide-coffee"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>`,
+ };
+ 
+ export const Icons = {

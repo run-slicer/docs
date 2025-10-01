@@ -5,7 +5,7 @@ description: Overview of the workspace manipulation API.
 
 The workspace API allows you to manipulate file entries that slicer is currently holding onto (i.e. files in the `Project` tab).
 
-Entries can be looked up and CRDed using the `WorkspaceContext` API available in [the context](/script/#context).
+Entries can be looked up and CRDed using the `WorkspaceContext` API available in [the context](/slicer/script/#context).
 
 ```js
 context.workspace.entries(); // lists all entries in the workspace

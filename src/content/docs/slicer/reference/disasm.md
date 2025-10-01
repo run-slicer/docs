@@ -5,7 +5,7 @@ description: Reference of the disassembly feature.
 
 Disassembly is a reconstruction of a Java class file into a human-readable representation or into Java source code (decompilation), this is the main view you'll see in slicer.
 
-Custom ones can be added through the [Disassembler API](/script/disasm) (popular ones are [here](/resources/scripts#disassembly)).
+Custom ones can be added through the [Disassembler API](/slicer/script/disasm) (popular ones are [here](/slicer/resources/scripts#disassembly)).
 
 :::note
 
@@ -1132,9 +1132,9 @@ It produces clean and easily comprehensible output with a focus on obfuscation r
 
 slicer includes a basic disassembler to power several bytecode analysis features, such as:
 
-- the [class view](/reference/class) (prettifying class file constructs)
-- the [flow graph](/reference/graph#control-flow) (prettifying instructions and computing the graph itself)
-- the [search](/reference/analysis#search) (prettifying constant pool entries)
+- the [class view](/slicer/reference/class) (prettifying class file constructs)
+- the [flow graph](/slicer/reference/graph#control-flow) (prettifying instructions and computing the graph itself)
+- the [search](/slicer/reference/analysis#search) (prettifying constant pool entries)
 - the pseudocode disassembler
 
 <details>

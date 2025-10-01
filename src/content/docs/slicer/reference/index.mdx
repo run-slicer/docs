@@ -1,0 +1,55 @@
+---
+title: Reference
+description: Reference of slicer's capabilities.
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+##### So, you want to look at some Java classes?
+
+You might want to start with the [Disassembly](/slicer/reference/disasm) page, especially if you're new to decompilation/disassembly in general.
+It provides an overview of the tools available in slicer, including their strengths and weaknesses.
+
+If you're looking for the graphing capabilities, check out the [Graph](/slicer/reference/graph) page,
+which describes the flow graph and inheritance tree visualizations.
+
+If you want to learn more about searching in class files or familiarize yourself with the pseudocode output,
+the [Analysis](/slicer/reference/analysis) page is for you.
+
+---
+
+<CardGrid>
+  <LinkCard
+    title="Analysis"
+    description="Traverse bytecode in an automated manner."
+    href="/slicer/reference/analysis"
+  />
+  <LinkCard
+    title="Deobfuscation"
+    description="Defend your eyes against obfuscated bytecode."
+    href="/slicer/reference/deobf"
+  />
+  <LinkCard
+    title="Disassembly"
+    description="Disassemble and decompile Java class files."
+    href="/slicer/reference/disasm"
+  />
+  <LinkCard
+    title="Class view"
+    description="Visualize class file properties and members."
+    href="/slicer/reference/class"
+  />
+  <LinkCard
+    title="Graph"
+    description="Visualize bytecode control flow and inheritance trees in a simple flow graph."
+    href="/slicer/reference/graph"
+  />
+  <LinkCard
+    title="Heap dump"
+    description="Summarize HPROF heap dumps into a tabular overview."
+    href="/slicer/reference/dump"
+  />
+</CardGrid>
