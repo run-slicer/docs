@@ -66,3 +66,16 @@ If you dispatch onto the context of your own script, event handlers in other scr
 If you wish for all scripts to handle your event, dispatch onto the root context.
 
 :::
+
+## Available events
+
+:::tip
+
+Check the [TypeScript type definitions](https://github.com/run-slicer/script/blob/main/index.d.ts) for more details about the events and their properties.
+
+:::
+
+| Event type      | Event object type   | Description                                                                          |
+| --------------- | ------------------- | ------------------------------------------------------------------------------------ |
+| `preload`       | `PreloadEvent`      | Triggered when a class file is about to be loaded. You can modify the raw data here. |
+| `option_change` | `OptionChangeEvent` | Triggered when [an option](/slicer/script/options) is changed.                       |
