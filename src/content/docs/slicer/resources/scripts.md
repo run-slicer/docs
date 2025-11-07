@@ -19,3 +19,7 @@ Clicking the script name will automatically open slicer and import it for you!
 ## Deobfuscation
 
 - [run-slicer/script-poke](https://slicer.run?script=https://cdn.jsdelivr.net/gh/run-slicer/script-poke@main/dist/index.js) ([GitHub](https://github.com/run-slicer/script-poke/releases)) - A script binding for the poke bytecode normalization and generic deobfuscation library; GPL.
+
+## Miscellaneous
+
+- Minecraft JAR importer ([GitHub Gist](https://gist.github.com/zlataovce/1b9ae2939eb295d9dc78c61e00e13e3a)) - A script for importing Minecraft JAR files easily.
