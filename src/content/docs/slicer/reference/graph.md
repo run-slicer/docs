@@ -48,13 +48,27 @@ By default, exception handler edges are not visualized, as they can become obstr
 
 The inheritance graph visualizes class inheritance and interface implementation using a bottom-to-top flow diagram.
 
+:::tip
+
+By default, only super types are visualized to reduce clutter.
+You can turn on/off subtypes using the ⚪ button in the graph controls.
+
+However, be aware that enabling subtypes can lead to very large graphs, depending on the class hierarchy in your workspace.
+
+:::
+
 ### Nodes
 
 A node is a block representing one class or interface. The node that represents the viewed class is highlighted using the primary color of the UI.
 
-:::tip
+:::note
 
-By default, super types implicit in the context of the Java language are hidden (i.e. `java.lang.Object`). You can turn them on/off using the ⚪ button in the inheritance graph controls.
+Super types implicit in the context of the Java language are always hidden to reduce clutter. These are:
+
+- `java/lang/Object` (the root of the class hierarchy)
+- `java/lang/Record` (super type of all record classes)
+- `java/lang/Enum` (super type of all enum classes)
+- `java/lang/annotation/Annotation` (super type of all annotation interfaces)
 
 :::
 
