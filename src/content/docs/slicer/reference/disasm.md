@@ -1532,9 +1532,9 @@ public super class HeapSort extends java.lang.Object {
 Constant pool entries are represented in a format consisting of the entry type identifier and the stringified value of the entry.
 
 - `UTF8 <value>` - any string-like value defined in the class file (names, descriptors, strings, ...)
-- `Integer/FLOAT/LONG/DOUBLE <value>` - primitives defined in the class file
+- `INTEGER/FLOAT/LONG/DOUBLE <value>` - primitives defined in the class file
 - `CLASS <class name in internal format, UTF8 value>` - class reference
-- `String "<UTF8 value>"` - string literal defined in the class file
+- `STRING "<UTF8 value>"` - string literal defined in the class file
 - `METHOD_TYPE <method descriptor, UTF8 value>` - method descriptor reference
 - `MODULE/PACKAGE <module/package name, UTF8 value>` - module-info/package-info name data
 - `FIELDREF/METHODREF/INTERFACE_METHODREF <owner name, CLASS value> <member name and descriptor, NAME_AND_TYPE value>` - class member reference
