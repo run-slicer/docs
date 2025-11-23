@@ -22,10 +22,10 @@ This is useful for embedding slicer into outside web applications and allowing u
 source URL: `https://raw.githubusercontent.com/GenericException/SkidSuite/refs/heads/master/obf/obf-sample-test.jar`<br>
 slicer URL: `https://slicer.run?url=https://raw.githubusercontent.com/GenericException/SkidSuite/refs/heads/master/obf/obf-sample-test.jar`
 
-If you need a space for uploading files to share, [bytebin](https://bytebin.lucko.me) and curl is a safe choice:
+If you need a space for uploading files to share, [pastes.dev](https://pastes.dev) and curl is a safe choice:
 
 ```bash
-echo "https://bytebin.lucko.me/$(curl --progress-bar --data-binary @./path/to/file.jar -XPOST https://bytebin.lucko.me/post | jq -r '.key')"
+echo "https://api.pastes.dev/$(curl --progress-bar --data-binary @./path/to/file.jar -XPOST https://api.pastes.dev/post | jq -r '.key')"
 ```
 
 ## Buttons
