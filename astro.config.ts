@@ -15,10 +15,10 @@ export default defineConfig({
         src: "/public/favicon-192x192.png",
         alt: "katana-project logo",
       },
-      social: [{ label: "GitHub", href: "https://github.com/run-slicer", icon: "github" }],
+      social: [{ label: "GitHub", href: "https://github.com/katana-project", icon: "github" }],
       lastUpdated: true,
       editLink: {
-        baseUrl: "https://github.com/run-slicer/docs/edit/main/",
+        baseUrl: "https://github.com/katana-project/docs/edit/main/",
       },
       customCss: ["./src/styles/custom.css"],
       components: {

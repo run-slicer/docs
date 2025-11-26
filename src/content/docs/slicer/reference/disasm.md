@@ -1001,7 +1001,7 @@ public class HeapSort
 The currently supported disassemblers are:
 
 - JASM (disassembler, https://github.com/jumanji144/Jasm)
-- slicer (pseudocode disassembler, https://github.com/run-slicer/asm)
+- slicer (pseudocode disassembler, https://github.com/katana-project/asm)
 
 ### JASM
 

@@ -71,7 +71,7 @@ If you wish for all scripts to handle your event, dispatch onto the root context
 
 :::tip
 
-Check the [TypeScript type definitions](https://github.com/run-slicer/script/blob/main/index.d.ts) for more details about the events and their properties.
+Check the [TypeScript type definitions](https://github.com/katana-project/script/blob/main/index.d.ts) for more details about the events and their properties.
 
 :::
 

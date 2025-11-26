@@ -25,7 +25,7 @@ A disassembler can request class files from the workspace based on their interna
 
 If your disassembler outputs Java source code, add a `language: "java"` property to enable Java syntax highlighting!
 
-_This property directly maps to slicer's internal language ID representation, possible values can be found [here](https://github.com/run-slicer/slicer/blob/main/src/lib/lang/index.ts#L3)._
+_This property directly maps to slicer's internal language ID representation, possible values can be found [here](https://github.com/katana-project/slicer/blob/main/src/lib/lang/index.ts#L3)._
 
 :::
 
