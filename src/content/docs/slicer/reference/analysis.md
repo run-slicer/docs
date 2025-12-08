@@ -65,17 +65,19 @@ If you wish to search for those, use the pseudocode mode.
 ### Pseudocode
 
 The pseudocode mode is useful for checking raw matches against the [disassembled representation](/slicer/reference/disasm#integrated-disassembler-slicer).
-Currently, only the constant pool can be searched via this mode, as analysis results of the `Code` attribute are not available during search-time.
+It searches through all instructions and constant pool entries, useful for finding number literals, string literals, member references and more.
 
 Commonly searched aspects and queries may look like this:
 
-| Searching?                                | Mode               | Query                               |
-| ----------------------------------------- | ------------------ | ----------------------------------- |
-| All strings in the class file             | Regular expression | `^STRING`                           |
-| All string-like entries in the class file | Regular expression | `^UTF8`                             |
-| Reference to a specific class             | Exact match/any    | `CLASS package/SearchedClass`       |
-| Reference to a specific field             | Exact match/any    | `NAME_AND_TYPE theField Lthe/Type;` |
-| Reference to a specific method            | Exact match/any    | `NAME_AND_TYPE theMethod ()V`       |
+| Searching?                                    | Mode               | Query                               |
+| --------------------------------------------- | ------------------ | ----------------------------------- |
+| All strings in the class file                 | Regular expression | `^STRING`                           |
+| All string-like entries in the class file     | Regular expression | `^UTF8`                             |
+| Reference to a specific class                 | Exact match/any    | `CLASS package/SearchedClass`       |
+| Reference to a specific field                 | Exact match/any    | `NAME_AND_TYPE theField Lthe/Type;` |
+| Reference to a specific method                | Exact match/any    | `NAME_AND_TYPE theMethod ()V`       |
+| A `ldc` instruction with a specific number    | Exact match/any    | `ldc 123456789`                     |
+| A `sipush` instruction with a specific number | Exact match/any    | `sipush 1234`                       |
 
 ### Members
 
